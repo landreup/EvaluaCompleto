@@ -1,0 +1,22 @@
+{% extends 'frontend.html' %}
+
+{% block title %}Nou Curs | Gestió de Cursos{% endblock %}
+
+{% block ruta %}Coordinació: <a href="/coordinacio/cursos">Gestió de Cursos</a> | Nou Curs{% endblock %}
+
+{% block tituloPagina %}Nou Curs{% endblock %}
+
+{% block contenido %}
+					  <p>Es va a afegir un nou curs a l'aplicació. Tingues en compter els següents punts</p>
+					  <p>La creació d'un nou curs implica:</p>
+					  <ul>
+					  	<li>Bloquejar totes les activitats actives en el curs actual</li>
+					  	<li>Canviar el rol de tots els tutors a professors.</li>
+					  </ul>
+					  <form action="." method="post">
+					  <p>El nou curs será {{ form.curso }} <input type="submit" value="Crear el nou curs" onclick="if (!confirm('Estas seguro de crear el nuevo curso?')) return false;"/></p>
+					  {% if form.errors %}
+					  <p>Errores: {{ form.errors }}</p>
+					  {% endif %}
+					  </form>
+{% endblock %}

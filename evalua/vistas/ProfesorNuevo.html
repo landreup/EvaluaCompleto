@@ -1,0 +1,22 @@
+{% extends 'frontend.html' %}
+
+{% block title %}Nou Professor | Gestió de Cursos{% endblock %}
+
+{% block ruta %}Coordinació: <a href="/coordinacio/professorat">Gestió del Professorat</a> | Nou Professor{% endblock %}
+
+{% block tituloPagina %}Nou professor{% endblock %}
+
+{% block contenido %}
+					  <table>
+					  	  {% if form.nombre.errors %}
+						  <tr>
+						  	<td colspan="2">{{ form.nombre.errors }}</td>
+						  </tr>
+						  {% endif %}
+						  <tr>
+						  	<td><label for="id_nombre">Nom:</label></td>
+						  	<td>{{ form.nombre }}</td>
+						  </tr>
+					  {{ form.as_table }}
+					  </table>
+{% endblock %}
